@@ -1,9 +1,11 @@
-# Vulcanize DB
+# VDB-Lite
 
-[![Build Status](https://travis-ci.org/makerdao/vulcanizedb.svg?branch=master)](https://travis-ci.org/makerdao/vulcanizedb)
-[![Go Report Card](https://goreportcard.com/badge/github.com/makerdao/vulcanizedb)](https://goreportcard.com/report/github.com/makerdao/vulcanizedb)
+[![Build Status](https://travis-ci.com/makerdao/vdb-lite.svg?branch=staging)](https://travis-ci.com/makerdao/vdb-lite)
+[![Go Report Card](https://goreportcard.com/badge/github.com/makerdao/vdb-lite)](https://goreportcard.com/report/github.com/makerdao/vdb-lite)
 
 > Vulcanize DB is a set of tools that make it easier for developers to write application-specific indexes and caches for dapps built on Ethereum.
+
+Note: this repo is a fork of [github.com/makerdao/vulcanizedb](https://github.com/makerdao/vulcanizedb), and should be added as a remote to that repository in order for imports to resolve.
 
 
 ## Table of Contents
