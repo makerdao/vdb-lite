@@ -71,6 +71,13 @@ CREATE TABLE public.full_sync_logs (
 
 
 --
+-- Name: TABLE full_sync_logs; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.full_sync_logs IS '@omit';
+
+
+--
 -- Name: block_stats; Type: VIEW; Schema: public; Owner: -
 --
 
@@ -78,6 +85,13 @@ CREATE VIEW public.block_stats AS
  SELECT max(full_sync_logs.block_number) AS max_block,
     min(full_sync_logs.block_number) AS min_block
    FROM public.full_sync_logs;
+
+
+--
+-- Name: VIEW block_stats; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON VIEW public.block_stats IS '@omit';
 
 
 --
@@ -103,6 +117,13 @@ CREATE TABLE public.blocks (
     uncle_hash character varying(66),
     eth_node_id integer NOT NULL
 );
+
+
+--
+-- Name: TABLE blocks; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.blocks IS '@omit';
 
 
 --
@@ -133,6 +154,13 @@ CREATE TABLE public.checked_headers (
     id integer NOT NULL,
     header_id integer NOT NULL
 );
+
+
+--
+-- Name: TABLE checked_headers; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.checked_headers IS '@omit';
 
 
 --
@@ -169,6 +197,13 @@ CREATE TABLE public.eth_nodes (
 
 
 --
+-- Name: TABLE eth_nodes; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.eth_nodes IS '@omit';
+
+
+--
 -- Name: full_sync_logs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -202,6 +237,13 @@ CREATE TABLE public.full_sync_receipts (
     tx_hash character varying(66),
     block_id integer NOT NULL
 );
+
+
+--
+-- Name: TABLE full_sync_receipts; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.full_sync_receipts IS '@omit';
 
 
 --
@@ -245,6 +287,13 @@ CREATE TABLE public.full_sync_transactions (
 
 
 --
+-- Name: TABLE full_sync_transactions; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.full_sync_transactions IS '@omit';
+
+
+--
 -- Name: full_sync_transactions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -274,6 +323,13 @@ CREATE TABLE public.goose_db_version (
     is_applied boolean NOT NULL,
     tstamp timestamp without time zone DEFAULT now()
 );
+
+
+--
+-- Name: TABLE goose_db_version; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.goose_db_version IS '@omit';
 
 
 --
@@ -352,6 +408,13 @@ CREATE TABLE public.header_sync_receipts (
     tx_hash character varying(66),
     rlp bytea
 );
+
+
+--
+-- Name: TABLE header_sync_receipts; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.header_sync_receipts IS '@omit';
 
 
 --
@@ -470,6 +533,13 @@ CREATE TABLE public.log_filters (
 
 
 --
+-- Name: TABLE log_filters; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.log_filters IS '@omit';
+
+
+--
 -- Name: log_filters_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -517,6 +587,13 @@ CREATE TABLE public.queued_storage (
     id integer NOT NULL,
     diff_id bigint NOT NULL
 );
+
+
+--
+-- Name: TABLE queued_storage; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.queued_storage IS '@omit';
 
 
 --
@@ -589,6 +666,13 @@ CREATE TABLE public.uncles (
 
 
 --
+-- Name: TABLE uncles; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.uncles IS '@omit';
+
+
+--
 -- Name: uncles_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -617,6 +701,13 @@ CREATE TABLE public.watched_contracts (
     contract_abi json,
     contract_hash character varying(66)
 );
+
+
+--
+-- Name: TABLE watched_contracts; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.watched_contracts IS '@omit';
 
 
 --
@@ -663,6 +754,13 @@ CREATE VIEW public.watched_event_logs AS
 
 
 --
+-- Name: VIEW watched_event_logs; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON VIEW public.watched_event_logs IS '@omit';
+
+
+--
 -- Name: watched_logs; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -671,6 +769,13 @@ CREATE TABLE public.watched_logs (
     contract_address character varying(42),
     topic_zero character varying(66)
 );
+
+
+--
+-- Name: TABLE watched_logs; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.watched_logs IS '@omit';
 
 
 --
