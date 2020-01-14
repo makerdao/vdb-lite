@@ -20,10 +20,12 @@ FROM golang:alpine
 WORKDIR /app
 
 # add certificates for node requests via https
+# bash for wait-for-it.sh
 RUN apk update \
         && apk upgrade \
         && apk add --no-cache \
         ca-certificates \
+	bash \
         && update-ca-certificates 2>/dev/null || true
 
 # setup environment
@@ -37,6 +39,8 @@ COPY --from=builder /vulcanizedb/vulcanizedb .
 COPY --from=builder /vulcanizedb/dockerfiles/header_sync/startup_script.sh .
 COPY --from=builder /vulcanizedb/db/migrations/* db/migrations/
 COPY --from=builder /go/src/github.com/pressly/goose/cmd/goose/goose goose
+# needed for waiting until postgres is ready before starting from docker-compose
+COPY --from=builder /vulcanizedb/dockerfiles/wait-for-it.sh .
 
 # need to execute with a shell to access env variables
 CMD ["./startup_script.sh"]
