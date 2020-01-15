@@ -631,6 +631,13 @@ CREATE TABLE public.storage_diff (
 
 
 --
+-- Name: TABLE storage_diff; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.storage_diff IS '@omit';
+
+
+--
 -- Name: storage_diff_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1207,6 +1214,13 @@ CREATE INDEX header_sync_logs_transaction ON public.header_sync_logs USING btree
 
 
 --
+-- Name: header_sync_logs_untransformed; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX header_sync_logs_untransformed ON public.header_sync_logs USING btree (transformed) WHERE (transformed IS FALSE);
+
+
+--
 -- Name: header_sync_receipts_contract_address; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1232,6 +1246,13 @@ CREATE INDEX header_sync_transactions_header ON public.header_sync_transactions 
 --
 
 CREATE INDEX headers_block_number ON public.headers USING btree (block_number);
+
+
+--
+-- Name: headers_check_count; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX headers_check_count ON public.headers USING btree (check_count);
 
 
 --
